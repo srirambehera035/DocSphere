@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: docsphere
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: STORAGE_DIR
+        value: /opt/render/project/src/storage
+      - key: UPLOAD_DIR
+        value: /opt/render/project/src/storage/uploads
+      - key: DB_PATH
+        value: /opt/render/project/src/storage/docintel.db
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OLLAMA_BASE_URL
+        sync: false
