@@ -8,7 +8,7 @@ A production-grade enterprise document intelligence platform featuring multi-for
 
 
 ### Instant Test Steps:
-1. Open the public URL .
+1. Open the public URL given in the about section.
 2. Click **Upload Document** and drag & drop your file.
 3. Within 2-3 seconds, the dual-view interface will display:
    - **Archetype**: `Contract` (with high confidence score and classification rationale).
