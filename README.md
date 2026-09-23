@@ -6,13 +6,10 @@ A production-grade enterprise document intelligence platform featuring multi-for
 
 ## 1. Quick Evaluator Verification
 
-### Live Public Application
-Access the currently running live instance:
-**`https://writer-yeast-such-such.trycloudflare.com`**
 
 ### Instant Test Steps:
-1. Open the public URL above in your browser.
-2. Click **Upload Document** and drag & drop [`sample_contract.pdf`](file:///D:/ADP/sample_contract.pdf) (located directly in the repository root).
+1. Open the public URL .
+2. Click **Upload Document** and drag & drop your file.
 3. Within 2-3 seconds, the dual-view interface will display:
    - **Archetype**: `Contract` (with high confidence score and classification rationale).
    - **Split-Screen View**: The original PDF document preview on the left alongside extracted intelligence on the right.
@@ -177,29 +174,7 @@ The production application is served at `http://127.0.0.1:8000`.
 
 ---
 
-## 5. Render Public Cloud Deployment
-
-This repository is ready for deployment on **Render** as a single unified web service.
-
-### Deployment Steps:
-1. Create a GitHub repository and push this directory.
-2. In the [Render Dashboard](https://dashboard.render.com/), select **New** > **Blueprint**.
-3. Connect your repository. Render automatically processes [`render.yaml`](file:///D:/ADP/render.yaml):
-   - **Runtime**: `Python`
-   - **Build Command**: `./build.sh`
-   - **Start Command**: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT --app-dir backend`
-4. Set optional API keys in the Render environment settings (`GEMINI_API_KEY` or `OPENAI_API_KEY`).
-5. Render builds the Vite frontend, copies static assets into FastAPI, installs Python packages, and brings the service live.
-
-### Health Check
-Render monitors service uptime via:
-```
-GET /api/healthz
-```
-
----
-
-## 6. REST API Reference
+## 5. REST API Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
